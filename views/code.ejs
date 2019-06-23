@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+
+		<link rel='stylesheet' href="/Semantic-UI-CSS-master/semantic.min.css" />
+		<script src='/javascripts/jquery-3.4.1.min.js'></script>
+		<script src='/Semantic-UI-CSS-master/semantic.min.js'></script>
+
+		<script src="/javascripts/menu.js"></script>
+		<script src="/javascripts/dropdown.js"></script>
+		<script src="/javascripts/code.js"></script>
+
+		<script src="/codemirror/lib/codemirror.js"></script>
+		<link rel="stylesheet" href="/codemirror/lib/codemirror.css" />
+
+		<script src="/codemirror/mode/clike/clike.js"></script>
+		<script src="/codemirror/mode/python/python.js"></script>
+		<script src="/codemirror/mode/javascript/javascript.js"></script>
+
+		<link rel="stylesheet" href="/codemirror/theme/eclipse.css" />
+		<link rel="stylesheet" href="/codemirror/theme/panda-syntax.css" />
+
+		<!-- CODEMIRROR ADDONS -->
+		<script src="/codemirror/addon/edit/matchbrackets.js"></script>
+		<script src="/codemirror/addon/edit/closebrackets.js"></script>
+
+		<!-- HINTS -->
+		<link rel="stylesheet" href="/codemirror/addon/hint/show-hint.css">
+		<script src="/codemirror/addon/hint/anyword-hint.js"></script>
+		<script src="/codemirror/addon/hint/javascript-hint.js"></script>
+		<script src="/codemirror/addon/hint/show-hint.js"></script>
+		
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+	</head>
+	<body class="uninverted">
+		<% include menu.ejs %>
+		<form action="submit" method="post" class="ui form">
+			<div class="ui center aligned container">
+				<p class="ui uninverted tiny header">문제번호 : <%= problem %> </p>
+				<select class="ui search dropdown" name="language" id="language">
+					<option class="uninverted item" value="">언어 선택</option>
+					<option class="uninverted item" value="text/x-csrc">C</option>
+					<option class="uninverted item" value="text/x-c++src">C++</option>
+					<option class="uninverted item" value="python">Python</option>
+					<option class="uninverted item" value="text/x-java">Java</option>
+					<option class="uninverted item" value="javascript">Javascript</option>
+				</select>
+			</div>
+			<textarea class="ui uninverted textarea" id="editor" cols=200 rows=30></textarea>
+			<div class="ui center aligned container">
+				<input type="submit" value="제출" class="ui uninverted primary button">
+			</div>
+		</form>
+	</body>
+</html>

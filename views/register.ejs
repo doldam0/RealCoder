@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><% title %></title>
+
+		<link rel='stylesheet' href="/Semantic-UI-CSS-master/semantic.min.css" />
+		<script src='/javascripts/jquery-3.4.1.min.js'></script>
+		<script src='/Semantic-UI-CSS-master/semantic.min.js'></script>
+
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<script src="/javascripts/menu.js"></script>
+        
+        <script src="/javascripts/register.js"></script>
+	</head>
+	<body class="uninverted">
+        <% include menu.ejs %>
+        <div class="ui space container">
+            <div class="ui uninverted segment" style="margin: 30px auto; max-width: 400px;">
+                <form action="register" method="post" class="ui uninverted form">
+                    <h4 class="ui uninverted dividing header">계정</h4>
+                    <div class="field">
+                        <div class="two fields">
+                            <div class="required field">
+                                <label for="id">아이디</label>
+                                <input type="text" placeholder="아이디" name="id" id="register-id">
+                                <% if (message.id) { %>
+                                    <div class="ui pointing red basic label" id="no-id">
+                                        <%= message.id %>
+                                    </div>
+                                <% }; %>
+                            </div>
+                            <div class="required field">
+                                <label for="password">비밀번호</label>
+                                <input type="password" placeholder="비밀번호" name="password" id="register-password">
+                                <% if (message.password) { %>
+                                    <div class="ui pointing red basic label" id="no-id">
+                                        <%= message.password %>
+                                    </div>
+                                <% }; %>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="ui uninverted dividing header">기본 정보</h4>
+                    <div class="field">
+                        <div class="fields">
+                            <div class="four wide required field">
+                                <label for="name">이름</label>
+                                <input type="text" placeholder="이름" name="name" id="name">
+                                <% if (message.name) { %>
+                                    <div class="ui pointing red basic label" id="no-id">
+                                        <%= message.name %>
+                                    </div>
+                                <% }; %>
+                            </div>
+                            <div class="twelve wide required field">
+                                <label for="email">이메일</label>
+                                <input type="email" placeholder="이메일" name="email" id="email">
+                                <% if (message.email) { %>
+                                    <div class="ui pointing red basic label" id="no-id">
+                                        <%= message.email %>
+                                    </div>
+                                <% }; %>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="ui uninverted dividing header">학적 정보</h4>
+                    <div class="field">
+                        <div class="three fields">
+                            <div class="field">
+                                <label for="school">학교 이름</label>
+                                <input type="text" placeholder="학교 이름" name="school" id="school">
+                            </div>
+                            <div class="field">
+                                <label for="stype">&nbsp;</label>
+                                <select name="stype" id="stype" class="ui fluid dropdown">
+                                    <option value="">학교</option>
+                                    <option value="초등학교">초등학교</option>
+                                    <option value="중학교">중학교</option>
+                                    <option value="고등학교">고등학교</option>
+                                    <option value="대학교">대학교</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="grade">학년</label>
+                                <select name="grade" id="grade" class="ui fluid dropdown">
+                                    <option value="">학년</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="submit" value="가입!" class="ui uninverted fluid button">
+                </form>
+            </div>
+        </div>
+	</body>
+</html>

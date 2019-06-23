@@ -1,0 +1,46 @@
+<div class="uninverted segment">
+    <div class="ui uninverted top fixed stackable menu">
+        <a href="/" class="item">RealCoder</a>
+        <a class="browse item" id="lectures">
+            강의
+            <i class="uninverted dropdown icon"></i>
+        </a>
+        <div class="ui uninverted popup">
+			<a href="/new_lectures" class="ui uninverted item">최근 강의</a>
+			<a href="/my_lectures" class="ui uninverted item">현재 수강중인 강의</a>
+			<a href="/search_lectures" class="ui uninverted item">강의 찾아보기</a>
+        </div>
+        <a href="/code" class="item">코드 제출하기</a>
+        <a href="/status" class="item">채점 상황</a>
+        <div class="right menu">
+            <% if (user) { %>
+                <div class="item" style="padding: 0px 16px;">
+                    <a class="ui <%= user.rank_color %> big label browse" id="user">
+                        <%= user.id %>
+                        <div class="detail"><%= user.rank %></div>
+                    </a>
+                    <div class="ui uninverted popup">
+                        <a href="/profile" class="ui uninverted item">내 설정</a>
+                        <a href="/logout" class="ui uninverted fluid button">
+                            <i class="uninverted white user plus icon"></i>
+                            로그아웃
+                        </a>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="item">
+                    <a href="/register" class="ui uninverted button">
+                        <i class="uninverted white user plus icon"></i>
+                        가입하기
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="/login" class="ui uninverted primary browse button">
+                        <i class="uninverted user icon"></i>
+                        로그인
+                    </a>
+                </div>
+            <% }; %>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'D2Coding Ligature';
+	src: url('../fonts/D2Coding.ttf');
+}
+
+body {
+	padding: 50px;
+	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+body.inverted {
+	background: #000000
+}
+
+body.uninverted {
+	background: #FFFFFF
+}
+
+a {
+	color: #00B7FF;
+}
+
+.ui.space.container {
+	padding-top: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+	.ui.space.container {
+		padding-top: 300px;
+	}
+}
+
+.ui.center.aligned.container > *, textarea {
+	margin: 10px 0px;
+}
+
+.CodeMirror {
+	font-family: 'D2Coding Ligature', 'Consolas', 'monospace';
+	font-variant-ligatures: normal;
+	font-size: 16px;
+}
+
+.label {
+	padding: 0.5em 0.785714em !important;
+}
